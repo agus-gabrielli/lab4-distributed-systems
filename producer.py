@@ -18,7 +18,7 @@ TOPIC = 'test-topic'
 # Sends a given JSON message from producer to the Kafka topic
 def send_message(producer, message):
     producer.send(TOPIC, value=message)
-    producer.flush() # Sends the message instantly, without waiting for the buffer to fill
+    producer.flush() # Blocks till the message is sent
     print(f"Message sent: {message}")
 
 # Creates a random message including a timestamp
